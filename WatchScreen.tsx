@@ -1,18 +1,13 @@
-// HomeScreen.tsx
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faHome, faBook, faMapMarkerAlt, faChurch, faCalendarAlt, faMusic, faCreditCard, faComment, faInfoCircle, faTv } from '@fortawesome/free-solid-svg-icons';
-
+import { faChurch } from '@fortawesome/free-solid-svg-icons';
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image source={require('./assets/HEADER-LOGO.png')} style={styles.headerLogo} />
-      </View>
-      <View style={styles.container}>
-        
       </View>
       <View style={styles.content}>
         <View style={styles.liveContainer}>
@@ -22,26 +17,61 @@ const HomeScreen = () => {
             {/* Placeholder for Live video player */}
           </View>
         </View>
-        <View style={styles.navContainer}>
-          <TouchableOpacity style={styles.navButton}>
-            <FontAwesomeIcon icon={faTv} size={20} color="#FFF" />
-            
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.navButton}>
-            <FontAwesomeIcon icon={faBook} size={20} color="#FFF" />
-            
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.navButton}>
-            <FontAwesomeIcon icon={faMapMarkerAlt} size={20} color="#FFF" />
-            
-          </TouchableOpacity>
-        </View>
-        <TouchableOpacity style={styles.prayerRequestButton}>
-          <Text style={styles.prayerRequestButtonText}>Send Prayer Request</Text>
-          <FontAwesomeIcon icon={faComment} size={15} color="#FFF" />
-        </TouchableOpacity>
-        <Text style={styles.eventsTitle}>Events</Text>
         <View style={styles.eventsContainer}>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.eventItem}>
+            {/* Placeholder for event details */}
+          </TouchableOpacity>
           <TouchableOpacity style={styles.eventItem}>
             {/* Placeholder for event details */}
           </TouchableOpacity>
@@ -50,7 +80,7 @@ const HomeScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -84,7 +114,7 @@ const styles = StyleSheet.create({
     marginBottom: 200,
   },
   liveContainer: {
-    marginBottom: 30,
+    marginBottom: 20,
   },
   liveTitle: {
     fontSize: 18,
@@ -112,12 +142,6 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     alignItems: 'center',
   },
-  iconBox: {
-    // Add your styles for the icon box here
-  },
-  iconImage: {
-    // Add your styles for the icon image here
-  },
   prayerRequestButton: {
     backgroundColor: '#465532',  // Updated Green Accent Background color
     padding: 15,
@@ -143,14 +167,17 @@ const styles = StyleSheet.create({
   eventsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    marginTop: 40,
   },
   eventItem: {
     backgroundColor: '#333',
-    padding: 15,
+    padding: 35,
     borderRadius: 10,
-    flex: 1,
-    marginRight: 10,
+    width: '40%',
+    marginBottom: 20,
     height: 90,
+    marginHorizontal: 19,
   },
 });
 

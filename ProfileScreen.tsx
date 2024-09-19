@@ -1,14 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faChurch, faUserCircle, faCog, faPlusCircle, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 const ProfileScreen = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>New Hope</Text>
-        <FontAwesomeIcon icon={faChurch} size={30} color="#fff" />
+        <Image source={require('./assets/HEADER-LOGO.png')} style={styles.headerLogo} />
       </View>
       <View style={styles.content}>
         <View style={styles.profileContainer}>
@@ -21,10 +20,10 @@ const ProfileScreen = () => {
         </View>
         <View style={styles.actionsContainer}>
           <TouchableOpacity style={styles.actionButton}>
-            <FontAwesomeIcon icon={faCog} size={20} color="#fff" />
+            <FontAwesomeIcon icon={faCog} size={20} color="#FFF" />
           </TouchableOpacity>
           <TouchableOpacity style={styles.actionButton}>
-            <FontAwesomeIcon icon={faInfoCircle} size={20} color="#fff" />
+            <FontAwesomeIcon icon={faInfoCircle} size={20} color="#FFF" />
           </TouchableOpacity>
         </View>
         <Text style={styles.sectionTitle}>My Ministries</Text>
@@ -37,7 +36,7 @@ const ProfileScreen = () => {
           </TouchableOpacity>
         </View>
         <TouchableOpacity style={styles.addButton}>
-          <FontAwesomeIcon icon={faPlusCircle} size={20} color="#fff" />
+          <FontAwesomeIcon icon={faPlusCircle} size={20} color="#FFF" />
         </TouchableOpacity>
         <Text style={styles.sectionTitle}>My Events</Text>
         <View style={styles.eventsContainer}>
@@ -52,48 +51,58 @@ const ProfileScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#212529',
+    flexGrow: 1,
+    backgroundColor: '#D9D9D9',  // Updated background color
+    
   },
   header: {
-    backgroundColor: '#007bff',
-    padding: 20,
-    flexDirection: 'row',
+    width: '100%',
+    paddingVertical: 20,
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    height: 200, // Adjusted height to be static for header
+  },
+  headerLogo: {
+    width: '60%', // Adjust the size based on the image dimensions
+    height: 80,
+    resizeMode: 'contain',
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#FFF',  // Updated light accent color
   },
   content: {
     padding: 20,
+    marginBottom: 200,
   },
   profileContainer: {
     alignItems: 'center',
     marginBottom: 20,
   },
   profileImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
+    width: 200,
+    height: 200,
+    borderRadius: 190,
+    borderColor: '#465532',  // Updated light accent color
+    borderWidth: 7,
     marginBottom: 10,
+    marginTop: -70,
   },
   userName: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#465532',  // Updated light accent color
     marginBottom: 5,
   },
   userBio: {
-    color: '#fff',
+    color: '#465532',  // Updated light accent color
     textAlign: 'center',
   },
   actionsContainer: {
@@ -102,7 +111,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   actionButton: {
-    backgroundColor: '#007bff',
+    backgroundColor: '#465532',  // Updated Green Accent Background color
     padding: 10,
     borderRadius: 50,
     marginLeft: 10,
@@ -110,7 +119,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#465532',  // Updated light accent color
     marginBottom: 10,
   },
   ministriesContainer: {
@@ -124,9 +133,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     flex: 1,
     marginRight: 10,
+    height: 90,
   },
   addButton: {
-    backgroundColor: '#007bff',
+    backgroundColor: '#465532',  // Updated Green Accent Background color
     padding: 15,
     borderRadius: 50,
     alignItems: 'center',
@@ -143,6 +153,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: '48%',
     marginBottom: 10,
+    height: 90,
   },
 });
 
