@@ -16,7 +16,7 @@ const TabIcon = ({ name, color, size = 24 }: { name: string; color: string; size
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => {
-  const colorScheme = useColorScheme(); // Get the current color scheme
+  const colorScheme = useColorScheme(); // Get the current color scheme 
 
   // Define colors for both light and dark modes
   const colors = {
@@ -39,7 +39,7 @@ const AppNavigator = () => {
         initialRouteName="Home"
         screenOptions={({ route }) => ({
           tabBarStyle: {
-            backgroundColor: colorScheme === 'dark' ? '#333' : '#fff',
+            backgroundColor: colorScheme === 'dark' ? '#e8e8e8' : '#e8e8e8',
           },
           tabBarActiveTintColor: currentColors.focused,
           tabBarInactiveTintColor: currentColors.default,
